@@ -1,0 +1,12 @@
+<h1>{{name}}</h1>
+<p>{{description}}</p>
+<p>Price: ${{price}}</p>
+<p>Category: {{category}}</p>
+<p>Availability: {{#if availability}}In Stock{{else}}Out of Stock{{/if}}</p>
+<form action="/carts/add" method="post">
+  <input type="hidden" name="productId" value="{{product._id}}">
+  <label for="quantity">Cantidad:</label>
+  <input type="number" name="quantity" min="1" value="1" required>
+  <button type="submit">Añadir al carrito</button>
+</form>
+<a href="/">Volver a Productos</a>
